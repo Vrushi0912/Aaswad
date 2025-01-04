@@ -239,6 +239,16 @@ html::-webkit-scrollbar-thumb {
 .icon-active {
   transform: scale(1.2);
 }
+.top-up-container {
+  transition: opacity 0.3s ease;
+}
+
+.top-up-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
 
 /* 
 
@@ -302,6 +312,206 @@ html::-webkit-scrollbar-thumb {
   color: var(--clr-neutral-900);
   transform: scale(1.035);
 }
+/* About Section Styling */
+#about {
+  background-color: var(--clr-accent-100);
+  padding: 40px 20px;
+}
+
+#about .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about .content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+#about .content {
+  flex: 1;
+  max-width: 50%;
+}
+
+#about .content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #dc5a03;
+}
+
+#about .content p {
+  margin: 15px 0 30px 0;
+  line-height: 1.8;
+  color: #484f55;
+}
+
+#about .btn-read-more {
+  line-height: 0;
+  padding: 12px 35px;
+  border-radius: 5px;
+  transition: 0.5s;
+  color: #fff;
+  background: orangered;
+  box-shadow: 0px 4px 20px rgba(255, 112, 67, 0.4);
+
+}
+.btn-read-more {
+  text-decoration: none;
+}
+
+.btn-read-more:hover {
+  text-decoration: none;
+}
+
+
+#about .image-container {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+#about .image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Slightly increase border radius for a more refined look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Deeper shadow for better visual impact */
+  object-fit: cover; /* Ensures the image maintains aspect ratio and fills the container */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add subtle hover effects */
+}
+
+/* Hover Effect for Image */
+#about .image-container img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #about .content-wrapper {
+    flex-direction: column; /* Stack content and image vertically */
+    text-align: center;
+  }
+
+  #about .content, #about .image-container {
+    max-width: 100%; /* Allow both text and image to take full width */
+  }
+
+  #about .image-container img {
+    max-width: 80%; /* Reduce image width for smaller screens */
+  }
+}
+/* Testimonials Section */
+.testimonials-section {
+  padding: 60px 0;
+  background: var(--clr-accent-100);
+}
+
+.testimonials-section .section-header h2 {
+  font-size: 38px;
+  font-weight: bold;
+  color: #ee480b;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.testimonials-section .section-header p {
+  font-size: 25px;
+  font-weight: bold;
+  color: #726a6a;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.testimonial-card {
+  perspective: 1000px;
+}
+
+.testimonial-card .card-inner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+.testimonial-card:hover .card-inner {
+  transform: rotateX(180deg);
+}
+
+.testimonial-card .card-front,
+.testimonial-card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card .card-front {
+  background: #FFC0CB;
+  text-align: center;
+}
+
+.testimonial-card .card-front .profile-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial-card .card-front h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.testimonial-card .card-front h4 {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.testimonial-card .card-front .stars {
+  color:#D5006D;
+}
+
+.testimonial-card .card-back {
+  background: #db5820;
+  color: #fff;
+  text-align: center;
+  font-weight: bolder;
+  transform: rotateX(180deg);
+  font-style: italic;
+}
+
+.testimonial-card .card-back .stars {
+  color: #ffff00;
+  margin-top: 15px;
+}
+/* Custom color for the stars */
+.custom-star-color {
+  color: #ffff00; /* Change this to any color you like (e.g., orange) */
+}
+
+
+
+body.home-page .top-up-container {
+  display: none;
+}
+
 
 /* Cart Count */
 
@@ -516,7 +726,6 @@ html::-webkit-scrollbar-thumb {
 
 .cta {
   flex: 1 1 30rem;
-  /* padding-left: 0.5rem; */
 }
 
 .cta > * {
@@ -571,6 +780,34 @@ html::-webkit-scrollbar-thumb {
   background-color: var(--clr-accent-600);
   transform: translateX(4px);
 }
+
+/* Food Results Styling */
+.food-results {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--clr-accent-200);
+  border-radius: 8px;
+  background-color: var(--clr-neutral-100);
+  box-shadow: 0 4px 8px var(--clr-neutral-400);
+}
+
+.food-results h3 {
+  font-size: var(--fs-600);
+  color: var(--clr-primary-400);
+  margin-bottom: 1rem;
+}
+
+.food-results ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+}
+
+.food-results li {
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-900);
+  margin-bottom: 0.5rem;
+}
+
 
 /* Contact Us */
 

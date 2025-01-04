@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aaswad</title> <!-- Title of the webpage -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body>
   <header class="primary-header container">
@@ -12,8 +14,10 @@
     <nav class="primary-navigation">
       <ul role="list" class="nav-list">
         <li><a href="/">Home</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="/menu">Popular</a></li>
         <li><a href="/menu">Menu</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact-us">Contact Us</a></li> <!-- New link to Contact Us -->
       </ul>
     </nav>
@@ -64,6 +68,42 @@
       </div>
     </section>
 
+<section id="about" class="about">
+  <div class="container">
+    <!-- Flexbox Wrapper -->
+    <div class="content-wrapper">
+      <!-- Left Content -->
+      <div class="content">
+        <h2>Welcome to Aaswad!</h2>
+        <p>
+          Aaswad is your go-to platform for ordering delicious and fresh food online. We bring authentic cuisines
+          right to your doorstep, prepared with the finest ingredients to satisfy your cravings.
+        </p>
+        <p>
+          Enjoy a seamless experience with our easy-to-use platform, and explore a variety of dishes to suit your
+          taste. Whether it's a quick snack or a full-course meal, Aaswad is here to serve you.
+        </p>
+        <a href="/menu" class="btn-read-more">
+          <span>Explore Menu</span>
+          <!--<i class="bi bi-arrow-right"></i>-->
+        </a>
+      </div>
+      
+      <!-- Right Image -->
+      <div class="image-container">
+        <img src="/img/about.png" alt="Aaswad About Us">
+      </div>
+    </div>
+  </div>
+</section>
+
+</section><!-- End About Section -->
+
+
+
+    
+    
+
     <section>
       <div class="container category-wrapper">
         <div class="even-rows">
@@ -111,7 +151,7 @@
             <p class="cta-tagline">
               Get your favorite food delivered straight to your door.
             </p>
-            <form action="#" class="city__form">
+            <form action="" class="city__form">
               <input type="text" placeholder="Enter your City" />
               <button type="submit" class="button square-button">
                 Find Food
@@ -121,6 +161,87 @@
         </div>
       </div>
     </section>
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials-section">
+  <div class="container" data-aos="fade-up">
+    <header class="section-header text-center">
+      <h2>Customer Testimonials</h2>
+      <p>Your feedback inspires us to create magic!</p>
+    </header>
+
+    <div class="row gy-4" id="testimonial-cards">
+      <!-- Testimonial Card 1 -->
+      <div class="col-lg-4 col-md-6 testimonial-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="/img/testimonials-3.jpg" alt="" class="profile-img">
+            <h3>Anita Deshmukh</h3>
+            <h4>Food Enthusiast</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <div class="card-back">
+            <p>
+              “Aaswad brings authenticity to every dish. The flavors remind me of home, and the ambiance is always welcoming.”
+            </p>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 2 -->
+      <div class="col-lg-4 col-md-6 testimonial-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="/img/testimonials-4.jpg" alt="" class="profile-img">
+            <h3>Rohan Sharma</h3>
+            <h4>Frequent Visitor</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <div class="card-back">
+            <p>
+              “A perfect spot for a family outing. The dishes are flavorful, and the service is top-notch. Highly recommended!”
+            </p>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 3 -->
+      <div class="col-lg-4 col-md-6 testimonial-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="/img/testimonials-5.jpg.jpg" alt="" class="profile-img">
+            <h3>Priya Mehta</h3>
+            <h4>Food Blogger</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+          <div class="card-back">
+            <p>
+              “The perfect balance of tradition and taste. Aaswad offers an experience like no other. Always a delight!”
+            </p>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Testimonials Section -->
+
+
 
     <section>
       <div class="contact-flex container">
@@ -219,12 +340,32 @@
   </div>
 </footer>
 
+</footer>
+  
+<div class="top-up-container" style="position: fixed; bottom: 20px; right: 20px;">
+  <a href="#" class="top-up-btn" style="display: flex; align-items: center; justify-content: center; background-color: #ff6600; color: white; padding: 10px 20px; border-radius: 50px; font-size: 18px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-decoration: none;">
+    <i class="fa-solid fa-arrow-up" style="margin-right: 8px;"></i>
+  </a>
+</div>
+
+</body>
 
 
 
 </body>
 <!-- Script Section -->
-<script>
+<script>// Detect scroll event
+  window.addEventListener("scroll", function () {
+    var topUpButton = document.querySelector(".top-up-container");
+    
+    if (window.scrollY > 50) {  // Change 50 to the scroll threshold of your choice
+      topUpButton.classList.remove("top-up-hidden");
+    } else {
+      topUpButton.classList.add("top-up-hidden");
+    }
+  });
+  
+
   document.addEventListener("DOMContentLoaded", function() {
     // Function to open social media links in a new tab
     function openInNewTab(url) {

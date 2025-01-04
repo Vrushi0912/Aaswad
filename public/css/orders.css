@@ -167,7 +167,6 @@ html::-webkit-scrollbar-thumb {
 .logo:hover {
   transform: scale(1.04);
 }
-
 .nav-list {
   display: flex;
   justify-content: space-around;

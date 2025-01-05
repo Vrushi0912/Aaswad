@@ -138,6 +138,10 @@ html::-webkit-scrollbar-thumb {
 }
 
 /* Navigation */
+<<<<<<< HEAD
+/* Navigation */
+=======
+>>>>>>> 165087c8fcd1e935944533b8c07558fd5cc2f5fe
 .primary-header {
   display: flex;
   justify-content: space-between;
@@ -166,6 +170,7 @@ html::-webkit-scrollbar-thumb {
 .logo:hover {
   transform: scale(1.04);
 }
+
 
 .nav-list {
   display: flex;

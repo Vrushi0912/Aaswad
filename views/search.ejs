@@ -35,16 +35,79 @@
   </div>
 </header>
 <main>
+
   <section class="search container">
     <div class="search__wrapper">
-      <input type="text" class="search__input" id="searchInput" name="food" placeholder="Search" spellcheck="false"><i class="fa-solid fa-magnifying-glass search__icon"></i>
+      <input type="text" class="search__input" id="searchInput" name="food" placeholder="Search" spellcheck="false">
+      <i class="fa-solid fa-magnifying-glass search__icon"></i>
+      <ul class="search-suggestions" id="suggestionsList"></ul>
+      <div class="search-loading">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+      </div>
     </div>
+
   </section>
+  
   <section class="result container" id="resultSection">
     <div class="menu__grid" id="resultGrid">
-
+      <!-- Results will be dynamically populated here -->
     </div>
   </section>
+  
+
+  <section class="featured-items container">
+    <h3>Featured Items</h3>
+    <div class="menu__grid">
+      <div class="menu-item">
+        <img src="/img/menu/dhokla.webp" alt="Featured Item 1" class="menu-img">
+        <p>Dhokla</p>
+      </div>
+      <div class="menu-item">
+        <img src="/img/menu/pav_bhaji.webp" alt="Featured Item 2" class="menu-img">
+        <p>Pav Bhaji</p>
+      </div>
+      <div class="menu-item">
+        <img src="/img/menu/gulab_jamun.webp" alt="Featured Item 3" class="menu-img">
+        <p>Gulab Jamun</p>
+      </div>
+      <div class="menu-item">
+        <img src="/img/menu/red_sauce_pasta.webp" alt="Featured Item 4" class="menu-img">
+        <p>Pasta</p>
+      </div>
+
+      <div class="menu-item">
+        <img src="/img/menu/pakode.webp" alt="Featured Item 4" class="menu-img">
+        <p>Pakode</p>
+      </div>
+
+      <div class="menu-item">
+        <img src="/img/menu/cold_coffee.webp" alt="Featured Item 4" class="menu-img">
+        <p>Cold Coffee</p>
+      </div>
+      <div class="menu-item">
+        <img src="/img/menu/salad.webp" alt="Featured Item 4" class="menu-img">
+        <p>Salad</p>
+      </div>
+      <div class="menu-item">
+        <img src="/img/menu/french_fries.webp" alt="Featured Item 4" class="menu-img">
+        <p>French Fries</p>
+      </div>
+
+      <!-- Add more featured items here if needed -->
+    </div>
+  </section>
+  
+  <!-- Modal/Lightbox for image -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content-container">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage">
+      <div id="caption"></div>
+    </div>
+  </div>
+    
+  
+  
 </main>
 
 

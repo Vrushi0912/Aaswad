@@ -260,3 +260,89 @@ window.onload = function () {
 
 //Adding change Event on Search Input
 searchInput.addEventListener("keyup", searchItems);
+
+document.getElementById('searchInput').addEventListener('input', function() {
+  const searchQuery = this.value;
+  const loadingMessage = document.getElementById('loadingMessage');
+  const resultGrid = document.getElementById('resultGrid');
+
+  // Show loading message
+  loadingMessage.style.display = 'block';
+  resultGrid.innerHTML = ''; // Clear previous results
+
+  // Simulate a delay for fetching data (replace with actual API call)
+  setTimeout(function() {
+      // Hide loading message after results are loaded
+      loadingMessage.style.display = 'none';
+
+      // Example: populate with search results (Replace with actual dynamic results)
+      resultGrid.innerHTML = `<p>Results for "${searchQuery}"</p>`;
+  }, 1500); // Simulate 1.5 seconds delay for loading
+});
+
+
+
+  const suggestions = ['Pizza', 'Burger', 'Pasta', 'Salad', 'Sandwich', 'Soup', 'Sushi', 'Steak','Dhokla','Dosa','Idli','Pav Bhaji','Pani Puri','Poha','Pulao','Rajma Chawal','Rasgulla','Samosa','Vada Pav','Biryani','Butter Chicken','Chole Bhature','Chowmein','Dal Makhani','Dum Aloo','Kadai Paneer','Kadhi Pakora','Kheer','Kofta','Lassi','Matar Paneer','Naan','Pakora','Paneer Tikka','Paratha','Raita','Ras Malai','Roti','Tandoori Chicken','Tandoori Roti','Upma','Veg Biryani','Veg Manchurian','Veg Pulao','Veggie Pizza','Aloo Gobi','Aloo Matar','Aloo Methi','Aloo Palak','Aloo Paratha','Aloo Tikki','Baingan Bharta','Bhindi Masala','Bhindi Fry','Bhindi Masala','Biryani','Butter Chicken',];
+  //const searchInput = document.getElementById('searchInput');
+  const suggestionsList = document.getElementById('suggestionsList');
+
+  searchInput.addEventListener('input', function() {
+    const query = searchInput.value.toLowerCase();
+    suggestionsList.innerHTML = '';
+
+    if (query) {
+      const filteredSuggestions = suggestions.filter(item => item.toLowerCase().includes(query));
+      filteredSuggestions.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        listItem.addEventListener('click', function() {
+          searchInput.value = item;
+          suggestionsList.style.display = 'none';
+          // Optionally trigger search functionality here
+        });
+        suggestionsList.appendChild(listItem);
+      });
+
+      suggestionsList.style.display = filteredSuggestions.length ? 'block' : 'none';
+    } else {
+      suggestionsList.style.display = 'none';
+    }
+  });
+
+  // Hide suggestions when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !suggestionsList.contains(e.target)) {
+      suggestionsList.style.display = 'none';
+    }
+  });
+
+// Get the modal
+var modal = document.getElementById("imageModal");
+
+// Get the image and insert it inside the modal
+var images = document.querySelectorAll(".menu-img");
+var modalImg = document.getElementById("modalImage");
+var captionText = document.getElementById("caption");
+
+images.forEach(image => {
+  image.addEventListener("click", function() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  });
+});
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Close the modal if the user clicks anywhere outside of the modal content
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}

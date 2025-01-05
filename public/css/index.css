@@ -283,7 +283,6 @@ html::-webkit-scrollbar-thumb {
   color: var(--clr-neutral-900);
   transform: scale(1.035);
 }
-<<<<<<< HEAD
 /* About Section Styling */
 #about {
   background-color: var(--clr-accent-100);
@@ -487,8 +486,6 @@ body.home-page .top-up-container {
 
 /* Cart Count */
 
-=======
->>>>>>> 165087c8fcd1e935944533b8c07558fd5cc2f5fe
 .cart {
   position: relative;
 }

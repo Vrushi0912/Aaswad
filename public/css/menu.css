@@ -414,6 +414,15 @@ html::-webkit-scrollbar-thumb {
   font-size: var(--fs-500);
 }
 
+.top-up-container {
+  transition: opacity 0.3s ease;
+}
+
+.top-up-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 
 /* 
@@ -513,4 +522,38 @@ Fonts Face Host
     url("/assets/fonts/metropolis-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+/* Basic styling for navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Align logo to the left and nav items to the right */
+  align-items: center; /* Vertically center the items */
+  padding: 1rem 2rem; /* Add some padding */
+  background-color: #333; /* Navbar background color */
+}
+
+/* Styling for logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.back-arrow-button {
+  position: fixed;
+  top: 0.5rem;
+  left: 2.3em;
+  font-size: var(--fs-500);
+  color: var(--clr-neutral-100);
+  background: #f07b0e;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(229, 223, 223, 0.1);
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.back-arrow-button:hover {
+  background: rgb(247, 79, 19);
+  transform: scale(1.1);
 }

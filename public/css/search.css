@@ -151,6 +151,12 @@ html::-webkit-scrollbar-thumb {
   background: rgb(212, 64, 0);
   background: linear-gradient(90.64deg, #ec500d 2.22%, #eb7405 123.12%);
   z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.nav-list li a {
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -320,6 +326,8 @@ html::-webkit-scrollbar-thumb {
   display: flex;
   position: relative;
   padding: 0 5rem;
+
+
 }
 
 .search__input {
@@ -356,6 +364,54 @@ html::-webkit-scrollbar-thumb {
   padding: 0.8rem 6rem 0.8rem .8rem;
   color: rgba(0, 0, 0, 0.6);
 }
+.search__wrapper {
+  position: relative;
+}
+.search-suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 300px; /* Added to limit height and enable scrolling */
+  overflow-y: auto; /* Enables scrolling if content exceeds max-height */
+  background-color: #fff; /* Changed to white for a cleaner look */
+  border: 1px solid #ddd; /* Added border for better separation */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly enhanced shadow for better depth */
+  z-index: 10;
+  display: none; /* Ensures suggestions are hidden by default */
+  border-radius: 4px; /* Adds rounded corners */
+}
+
+.search-suggestions li {
+  padding: 8px 12px; /* Adjusted padding for a more compact and uniform appearance */
+  font-size: 14px; /* Reduced font size for a more refined look */
+  cursor: pointer;
+  color: #333; /* Text color for better readability */
+}
+
+.search-suggestions li:hover {
+  background-color: #ff6600; /* Changed to a vibrant orange for a clear hover effect */
+  color: #fff; /* White text color on hover for contrast */
+}
+
+.search-suggestions li:not(:last-child) {
+  border-bottom: 1px solid #eee; /* Adds separator between items for clarity */
+}
+.search-loading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.search__input.loading ~ .search-loading {
+  display: block;
+}
+
 
 /* Alt Result */
 
@@ -480,6 +536,7 @@ html::-webkit-scrollbar-thumb {
   font-size: var(--fs-500);
 }
 
+
 /* 
 
 Fonts Face Host
@@ -578,3 +635,200 @@ Fonts Face Host
   font-weight: normal;
   font-style: normal;
 }
+/* Loader and fetching message styles */
+.loading {
+  display: none; /* Hidden by default, show when searching */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.loading__message {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.featured-items {
+  text-align: center;
+  margin-top: -25px; /* Adjust this value to move the section upwards */
+}
+
+.featured-items h3 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ff6600;
+  margin-bottom: 20px;
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.menu-item {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.menu-item p {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
+  color: #fff;
+  background-color: #ff6600;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9); /* Black with opacity */
+  padding-top: 60px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  padding-top: 60px;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInModal 0.4s ease-in-out; /* Fade-in animation */
+}
+
+/* Modal Content Container */
+.modal-content-container {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  text-align: center;
+  background-color: rgba(248, 239, 239, 0.97); /* Semi-transparent white background */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Modal Image */
+.modal-content {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  animation: scaleUpImage 0.5s ease-out;
+  border-radius: 10px;
+}
+
+/* Caption of the image */
+#caption {
+  margin: 15px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+/* The Close Button */
+.close {
+  font-size: 36px;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: #ff6600; /* Orange color */
+  color: #fff;
+  border-radius: 50%; /* Circular shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for floating effect */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000; /* To ensure it sits above the image */
+}
+
+.close:hover {
+  transform: scale(1.1); /* Slightly enlarges the button on hover */
+  background-color: #e55e00; /* Darker orange on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Larger shadow on hover */
+}
+
+.close:before {
+  content: ''; /* Cross symbol */
+  font-size: 30px; /* Size of the cross */
+  font-weight: bold;
+  color: #fff; /* White cross */
+}
+
+.close:focus {
+  outline: none; /* Removes the outline when clicked */
+}
+
+/* Animation for the modal */
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Image Zoom Animation */
+@keyframes scaleUpImage {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+

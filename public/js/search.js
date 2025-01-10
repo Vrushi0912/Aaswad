@@ -346,3 +346,12 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const backButton = document.querySelector('.back-button');
+
+  backButton.addEventListener('click', () => {
+    window.history.back(); // Navigates to the previous page
+  });
+});

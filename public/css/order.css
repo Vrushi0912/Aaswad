@@ -5,7 +5,7 @@
   --clr-accent-400: hsl(20, 38%, 35%, 0.5);
   --clr-accent-350: hsl(22, 80%, 52%);
   --clr-accent-325: hsl(28, 42%, 41%);
-  --clr-accent-300: hsl(29, 73%, 52%C:\Users\vrush\OneDrive\Desktop\Aaswad\public\css\order.css);
+  --clr-accent-300: hsl(29, 73%, 52%);
   --clr-accent-200: hsla(29, 73%, 52%, 0.45);
   --clr-accent-100: hsl(40, 100%, 91%);
 
@@ -137,11 +137,8 @@ html::-webkit-scrollbar-thumb {
       ); */
 }
 
+
 /* Navigation */
-<<<<<<< HEAD
-/* Navigation */
-=======
->>>>>>> 165087c8fcd1e935944533b8c07558fd5cc2f5fe
 .primary-header {
   display: flex;
   justify-content: space-between;
@@ -315,8 +312,9 @@ html::-webkit-scrollbar-thumb {
 }
 
 .section__title {
-  font-size: var(--fs-650);
-  font-weight: var(--fw-medium);
+  font-size: 35px;
+  color: #eb7405;
+  font-weight: bold;
   padding: 0.5rem 0;
 }
 
@@ -567,4 +565,65 @@ html::-webkit-scrollbar-thumb {
     url("/assets/fonts/metropolis-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+
+
+/* back button */
+
+.back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eb7405, #f5ce0e);
+  border: none;
+  cursor: pointer;
+  padding: 12px; /* Adjusted for proper circular size */
+  width: 40px; /* Fixed width */
+  height: 40px; /* Fixed height */
+  font-size: 50px; /* Adjusted font size for the arrow */
+  color: white;
+  border-radius: 50%; /* Perfect circle */
+  transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+  position: absolute;
+  left: 28px; /* Adjust left position */
+  z-index: 100; /* Ensure it's above other content */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.back-button::before {
+  content: '\2190'; /* Left arrow */
+  font-size: 24px; /* Adjusted font size for the arrow */
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #e66204e0, #f1cd03); /* Gradient background */
+  /* Reverse gradient on hover */
+  transform: translateX(-8px); /* Subtle shift to the left on hover */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+}
+
+.back-button:active {
+  transform: translateX(-4px); /* Subtle movement when clicked */
+}
+
+.back-button:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+@keyframes arrow-bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Slight bounce effect */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.back-button:hover::before {
+  animation: arrow-bounce 0.3s ease-in-out; /* Bouncing effect on hover */
 }

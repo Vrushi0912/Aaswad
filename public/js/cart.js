@@ -370,3 +370,54 @@ function placeOrder() {
 
 //Adding Click Event on placeOrderBtn Button
 placeOrderBtn.addEventListener("click", placeOrder);
+
+
+// Adding Click Event on placeOrderBtn Button
+document.getElementById("placeOrderBtn").addEventListener("click", function() {
+  // Start Countdown when the button is clicked
+  startCountdown(45 * 60 * 1000); // 45 minutes in milliseconds
+});
+
+// Countdown Timer Setup
+function startCountdown(duration) {
+  var countdownElement = document.getElementById("countdown");
+  var endTime = Date.now() + duration; // End time (in milliseconds)
+
+  // Update countdown every second
+  var interval = setInterval(function() {
+    var timeRemaining = endTime - Date.now(); // Calculate remaining time
+    if (timeRemaining <= 0) {
+      clearInterval(interval); // Stop the countdown when time is up
+      countdownElement.innerHTML = "Your order is here!";
+    } else {
+      var minutes = Math.floor(timeRemaining / 60000);
+      var seconds = Math.floor((timeRemaining % 60000) / 1000);
+      countdownElement.innerHTML = minutes + "m " + seconds + "s"; // Format the time
+    }
+  }, 1000); // Update every 1 second
+}
+
+
+document.getElementById('subscribeBtn').addEventListener('click', function() {
+  var email = document.getElementById('newsletterEmail').value;
+  if (email) {
+    // Show an alert message
+    alert('Thank you for subscribing!');
+
+    // Optionally, open a new window (uncomment the line below if needed)
+    window.open('https://yourwebsite.com/thank-you', '_blank');
+
+    // Clear the input field after subscription
+    document.getElementById('newsletterEmail').value = '';
+  } else {
+    alert('Please enter a valid email address.');
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const backButton = document.querySelector('.back-button');
+
+  backButton.addEventListener('click', () => {
+    window.history.back(); // Navigates to the previous page
+  });
+});

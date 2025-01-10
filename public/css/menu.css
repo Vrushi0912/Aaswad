@@ -532,28 +532,61 @@ Fonts Face Host
   background-color: #333; /* Navbar background color */
 }
 
-/* Styling for logo container */
-.logo-container {
+
+.back-button {
   display: flex;
+  justify-content: center;
   align-items: center;
+  background: linear-gradient(135deg, #eb7405, #f5ce0e);
+  border: none;
+  cursor: pointer;
+  padding: 12px; /* Adjusted for proper circular size */
+  width: 40px; /* Fixed width */
+  height: 40px; /* Fixed height */
+  font-size: 50px; /* Adjusted font size for the arrow */
+  color: white;
+  border-radius: 50%; /* Perfect circle */
+  transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+  position: absolute;
+  left: 28px; /* Adjust left position */
+  z-index: 100; /* Ensure it's above other content */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
 }
 
-.back-arrow-button {
-  position: fixed;
-  top: 0.5rem;
-  left: 2.3em;
-  font-size: var(--fs-500);
-  color: var(--clr-neutral-100);
-  background: #f07b0e;
-  padding: 0.5rem 0.75rem;
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(229, 223, 223, 0.1);
-  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+.back-button::before {
+  content: '\2190'; /* Left arrow */
+  font-size: 24px; /* Adjusted font size for the arrow */
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease-in-out;
 }
 
-.back-arrow-button:hover {
-  background: rgb(247, 79, 19);
-  transform: scale(1.1);
+.back-button:hover {
+  background: linear-gradient(135deg, #e66204e0, #f1cd03); /* Gradient background */
+  /* Reverse gradient on hover */
+  transform: translateX(-8px); /* Subtle shift to the left on hover */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+}
+
+.back-button:active {
+  transform: translateX(-4px); /* Subtle movement when clicked */
+}
+
+.back-button:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+@keyframes arrow-bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Slight bounce effect */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.back-button:hover::before {
+  animation: arrow-bounce 0.3s ease-in-out; /* Bouncing effect on hover */
 }

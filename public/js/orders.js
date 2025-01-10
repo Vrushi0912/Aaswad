@@ -96,3 +96,18 @@ function orderClick(event) {
 order.forEach((tile) => {
   tile.addEventListener("click", orderClick);
 });
+
+
+
+document.getElementById('back-button').addEventListener('click', function() {
+  window.history.back();
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const backButton = document.querySelector('.back-button');
+
+  backButton.addEventListener('click', () => {
+    window.history.back(); // Navigates to the previous page
+  });
+});

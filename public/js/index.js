@@ -44,3 +44,27 @@ profileBtn.addEventListener("click", toggleProfileDropdown);
 
 // Adding Click Event on Document to Close Profile Dropdown
 document.addEventListener("click", closeProfileDropdown);
+
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+  
+  // Simulate a successful form submission (e.g., send data via fetch to server)
+  // You can replace this with your actual backend call.
+  setTimeout(function() {
+    // Simulate form success, show the modal after 1 second
+    const modal = document.getElementById("thank-you-modal");
+    modal.style.display = "block";  // Show modal
+
+    // Close the modal when the user clicks the close button
+    document.querySelector(".close-button").addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    // Close the modal if the user clicks outside of the modal
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  }, 1000);  // Simulate a 1-second delay for server response
+});

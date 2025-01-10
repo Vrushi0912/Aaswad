@@ -1,4 +1,5 @@
 <header class="primary-header container">
+  <button id="back-button" class="back-button"></button>
   <a href="/"><img src="/img/lastlogo.svg" class="logo" alt="Aaswad Logo" /></a>
   <nav class="primary-navigation">
     <ul role="list" class="nav-list">
@@ -6,10 +7,12 @@
       <li><a href="#about">About</a></li>
       <li><a href="/menu">Popular</a></li>
       <li><a href="/menu">Menu</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#contact-us">Contact Us</a></li> <!-- New link to Contact Us -->
 
     </ul>
   </nav>
+
   <div class="icons">
     <a href="/menu/search" class="icon-hover"><i class="fa-solid fa-magnifying-glass icon"></i></a>
     <div class="profile">
@@ -39,11 +42,151 @@
   <% if( (!cart) || (!cart.items.length>0) ){ %>
     <section class="alt__section container">
       <div class="alt">
-      <h2 class="section__title">Your Cart is Empty</h2>
+      <h2 class="section__title">Your Cart is Empty !!</h2>
       <a href="/menu" class="btn empty__cta">See Menu</a>
       <a href="/orders" class="btn empty__cta orders__btn">Orders</a>
+      <div class="cta-buttons">
+        <a href="/menu" class="cta-btn menu-btn">Browse Menu</a>
+        <a href="/orders" class="cta-btn orders-btn">View Orders</a>
       </div>
+      </div>
+      <section class="estimated-delivery">
+        <h3 class="delivery-title">Estimated Delivery Time</h3>
+        <div class="delivery-container">
+          <!-- Delivery Time Box -->
+          <div class="delivery-item">
+            <div class="delivery-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div class="delivery-info">
+              <p>Your order will arrive in:</p>
+              <p class="delivery-estimate">45 - 60 minutes</p>
+            </div>
+          </div>
+      
+          <!-- Progress Bar -->
+          <div class="delivery-item progress-container">
+            <div class="progress-bar">
+              <div class="progress"></div>
+              <span class="progress-text">50%</span> <!-- Shows progress percentage -->
+            </div>
+          </div>
+      
+          <!-- Delivery Info (Truck Icon) -->
+          <div class="delivery-item">
+            <div class="delivery-icon">
+              <i class="fa-solid fa-truck"></i>
+            </div>
+            <div class="delivery-info">
+              <p class="delivery-note">Your food is on its way! Hang tight!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="special-offers">
+        <h3 class="offers-title">Special Offers</h3>
+        <div class="offers-container">
+          <!-- Offer Item 1 -->
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i class="fa-solid fa-percent"></i>
+            </div>
+            <div class="offer-details">
+              <h4>10% OFF Your First Order!</h4>
+              <p>Sign up and get a 10% discount on your first order. Don't miss out!</p>
+            </div>
+          </div>
+          <!-- Offer Item 2 -->
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i class="fa-solid fa-truck"></i>
+            </div>
+            <div class="offer-details">
+              <h4>Free Delivery on Orders Over $30</h4>
+              <p>Enjoy free delivery when you spend $30 or more. Order now!</p>
+            </div>
+          </div>
+          <!-- Offer Item 3 -->
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i class="fa-solid fa-gift"></i>
+            </div>
+            <div class="offer-details">
+              <h4>Buy 1 Get 1 Free on Selected Items</h4>
+              <p>Choose from our special menu and get another item for free. Limited time only!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+   
+      
     </section>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Footer Left: About and Contact -->
+        <div class="footer-left">
+          <h3 class="footer-logo">Aaswad</h3>
+          <p class="footer-description">Bringing you delicious meals straight to your door. Fast, fresh, and always satisfying.</p>
+          
+      <!-- Footer Contact Section -->
+<div class="footer-contact">
+  <p><strong>Contact Us:</strong></p>
+  <ul class="contact-list">
+    <li>Email: info@aaswad.com</li>
+    <li>Phone: +1 234 567 890</li>
+  </ul>
+</div>
+
+        </div>
+        
+        <!-- Footer Center: Useful Links -->
+        <div class="footer-links">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <!-- Footer Right: Social Media -->
+        <div class="footer-social">
+          <h4 class="footer-title">Follow Us</h4>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100095689054459" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/VrushketM31712?t=wsWoGu-nmFc1JuRYQNN-7g&s=09" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100095689054459" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@ofa-08vrushketvivekmulye61?si=jOp2gDyPEDc3FVCt" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/vrushket-mulye-a5468a287/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        
+      </div>
+        <!-- Business Hours Section -->
+
+
+      
+      <div class="footer-bottom">
+        <div class="newsletter">
+          <h4>Stay Updated</h4>
+          <input type="email" id="newsletterEmail" placeholder="Enter your email" class="newsletter-input">
+          <button type="button" id="subscribeBtn" class="newsletter-btn">Subscribe</button>
+        </div>
+      </div>
+
+
+      <!-- Success Message Popup -->
+      <div id="successMessage" class="popup-message">
+        <div class="message-content">
+          <i class="fa-solid fa-check-circle message-icon"></i>
+          <p class="message-text">Thank you for subscribing!</p>
+          <button id="closeMessage" class="close-btn">Close</button>
+        </div>
+      </div>
+    </footer>
+    
     <!-- If Cart is Not Empty -->
   <% } else{ %>
     <section class="cart__section container">
@@ -94,6 +237,9 @@
         <% }) %>
       </div>
     </section>
+
+
+    
     <section class="bill__section container">
       <div class="bill__flex">
         <!-- <h3 class="bill__title bill">Bill Summary</h3> -->
@@ -163,7 +309,7 @@
             <% } %>
       </div>
     </section>
-      
+
     
 
     <% } %>
@@ -173,9 +319,40 @@
     </div>
 
     <div class="overlay" id="overlay"></div>
-  
+   
+<div class="top-up-container" style="position: fixed; bottom: 20px; right: 20px;">
+  <a href="#" class="top-up-btn" style="display: flex; align-items: center; justify-content: center; background-color: #ff6600; color: white; padding: 10px 20px; border-radius: 50px; font-size: 18px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-decoration: none;">
+    <i class="fa-solid fa-arrow-up" style="margin-right: 8px;"></i>
+  </a>
+</div>
+
 </main>
 
 
 <!-- Scrips -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('subscribeBtn').addEventListener('click', function() {
+      var email = document.getElementById('newsletterEmail').value;
+
+      if (email && validateEmail(email)) {
+        document.getElementById('successMessage').classList.add('show');
+        document.getElementById('newsletterEmail').value = '';
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    });
+
+    function validateEmail(email) {
+      var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    document.getElementById('closeMessage').addEventListener('click', function() {
+      document.getElementById('successMessage').classList.remove('show');
+    });
+  });
+</script>
+
 <script src="/js/cart.js"></script>

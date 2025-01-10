@@ -303,112 +303,107 @@ html::-webkit-scrollbar-thumb {
 /*
     
     Orders Section
+     */
+  .orders__section {
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: var(--ff-primary);
+  }
   
-  */
-
-  .orders__section{
-    padding: 2rem 11rem;
+  .section__title {
+    font-size: 2rem;
+    color: var(--clr-accent-300);
+    font-weight: var(--fw-bold);
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
-
-  .section__title{
-    font-size: var(--fs-650);
-    font-weight: var(--fw-medium);
-    padding: .5rem 0;
-  }
-
-  .order{
+  
+  .order {
     background-color: var(--clr-neutral-100);
     padding: 1.5rem 2rem;
     border-radius: 0.75rem;
     font-size: var(--fs-400);
     margin: 1.25rem 0;
-    transition: .15s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     cursor: pointer;
-  }
-
-  .order:hover{
-    /* background-color: rgba(0, 0, 0,0.3); */
-    /* background-color: hsl(107, 26%, 68%); */
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
-    transform: scale(0.985);
-  }
-
-  .order *{
-    pointer-events: none;
-  }
-
-  .items__flex{
-    padding: .5rem .25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .item__details{
+  .order:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+  }
+  
+  .order * {
+    pointer-events: none;
+  }
+  
+  .items__flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+  
+  .item__details {
     font-weight: var(--fw-medium);
+    color: var(--clr-neutral-900);
   }
-
-  .item__qty{
-    color: rgba(0, 0, 0, 0.65); 
+  
+  .item__qty {
+    color: rgba(0, 0, 0, 0.65);
   }
-
-  .item__serve{
+  
+  .item__serve {
     font-size: var(--fs-200);
     color: rgba(0, 0, 0, 0.5);
   }
-
-  .time__total{
+  
+  .time__total {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .25rem .25rem;
+    padding: 0.5rem 0;
     border-top: 2px dashed rgba(0, 0, 0, 0.2);
     border-bottom: 2px dashed rgba(0, 0, 0, 0.2);
   }
-
-  .time{
+  
+  .time {
     font-size: var(--fs-300);
     color: rgba(0, 0, 0, 0.75);
   }
-
-  .total{
+  
+  .total {
     font-weight: var(--fw-medium);
+    font-size: var(--fs-400);
+    color: var(--clr-accent-300);
   }
-
-
-
-
-/* 
   
-    If Cart is Empty
+  .alt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    text-align: center;
+  }
   
-  */
-
-.alt {
-  /* text-align: center; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 2rem 0;
-}
-
-.empty__cta {
-  font-size: var(--fs-325);
-  background-color: var(--clr-accent-300);
-  color: var(--clr-neutral-100);
-  font-weight: var(--fw-medium);
-  display: inline-block;
-  text-decoration: none;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.1em 1em;
-  line-height: 2;
-  box-shadow: 17px 14px 14px var(--clr-accent-200);
-  transition: transform 0.3s ease;
-}
-
-.empty__cta:hover {
-  background-color: var(--clr-accent-600);
-  transform: translateY(-4px);
-}
+  .empty__cta {
+    font-size: var(--fs-325);
+    background-color: var(--clr-accent-300);
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-medium);
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .empty__cta:hover {
+    background-color: var(--clr-accent-600);
+    transform: translateY(-4px);
+  }
+  
 
 /* 
   
@@ -562,4 +557,61 @@ html::-webkit-scrollbar-thumb {
     url("/assets/fonts/metropolis-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+.back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eb7405, #f5ce0e);
+  border: none;
+  cursor: pointer;
+  padding: 12px; /* Adjusted for proper circular size */
+  width: 40px; /* Fixed width */
+  height: 40px; /* Fixed height */
+  font-size: 50px; /* Adjusted font size for the arrow */
+  color: white;
+  border-radius: 50%; /* Perfect circle */
+  transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+  position: absolute;
+  left: 28px; /* Adjust left position */
+  z-index: 100; /* Ensure it's above other content */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.back-button::before {
+  content: '\2190'; /* Left arrow */
+  font-size: 24px; /* Adjusted font size for the arrow */
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #e66204e0, #f1cd03); /* Gradient background */
+  /* Reverse gradient on hover */
+  transform: translateX(-8px); /* Subtle shift to the left on hover */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+}
+
+.back-button:active {
+  transform: translateX(-4px); /* Subtle movement when clicked */
+}
+
+.back-button:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+@keyframes arrow-bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Slight bounce effect */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.back-button:hover::before {
+  animation: arrow-bounce 0.3s ease-in-out; /* Bouncing effect on hover */
 }

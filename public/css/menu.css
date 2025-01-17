@@ -565,6 +565,33 @@ Fonts Face Host
   /* Reverse gradient on hover */
   transform: translateX(-8px); /* Subtle shift to the left on hover */
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+<<<<<<< HEAD
+=======
+}
+
+.back-button:active {
+  transform: translateX(-4px); /* Subtle movement when clicked */
+}
+
+.back-button:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+@keyframes arrow-bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Slight bounce effect */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.back-button:hover::before {
+  animation: arrow-bounce 0.3s ease-in-out; /* Bouncing effect on hover */
+>>>>>>> 2c38acb06ea261031b8ff9842b92d81f26fcf0a7
 }
 
 .back-button:active {

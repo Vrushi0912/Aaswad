@@ -888,4 +888,8 @@ Fonts Face Host
 
 .back-button:hover::before {
   animation: arrow-bounce 0.3s ease-in-out; /* Bouncing effect on hover */
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2c38acb06ea261031b8ff9842b92d81f26fcf0a7

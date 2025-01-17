@@ -139,3 +139,12 @@ async function cartAdd(event) {
 addBtns.forEach((btn) => {
   btn.addEventListener("click", cartAdd);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const backButton = document.querySelector('.back-button');
+
+  backButton.addEventListener('click', () => {
+    window.history.back(); // Navigates to the previous page
+  });
+});
+

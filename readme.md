@@ -1,35 +1,43 @@
-# EatEasy
+### Aaswad  -Food ordering website
 
-EatEasy is your go-to platform for ordering food online from your favorite restaurants, hassle-free.
+### Overview ###
 
-## Getting Started
+This is a Node.js application that allows you to manage a food menu, with a backend running on Express and MongoDB to store the menu data. It provides an interface for adding food items to the database, using a .csv file for easy updates.
 
-These are the instructions to clone and run this project in your local machine for developement and testing purpose
+### Prerequisites ###
 
-### Prerequisites
+Before you begin, ensure you have the following installed:
 
-- Node
-- Git
-- MongoDB
+  - Node.js – JavaScript runtime
+  - Git – Version control
+  - MongoDB – NoSQL database
+  - Installation
 
-### Installation
+Follow these steps to get the project up and running locally:
 
-1. First of all, Clone this repository & navigate to the directory
+Clone the repository:
 
 ```
-git clone https://github.com/chiragverma11/EatEasy_Food_Ordering_Website.git
-cd EatEasy_Food_Ordering_Website
+git clone <repository_url>
 ```
 
-2. Install the Dependencies
+Navigate to the project directory:
+
+```
+cd <project_directory>
+```
+
+Install the dependencies:
 
 ```
 npm install
 ```
 
-### Running Locally
+## Configuration ##
+  - Setting up Environment Variables
+  - Create a .env file in the root directory with the following content:
 
-- First Create `.env` file in root directory using the following content and make changes if required.
+  - makefile
 
 ```
 PORT=8080
@@ -37,35 +45,39 @@ MONGO_URI="YourMongoDBuri"
 TOKEN_SECRET="JwtSecret"
 ```
 
-- Starting the Server
+Replace the values of MONGO_URI and TOKEN_SECRET with your MongoDB URI and your secret JWT key, respectively.
+
+Running Locally
+
+Start the server with the following command:
 
 ```
 npm start
 ```
 
-or
+- The application will run locally on http://localhost:8080.
 
-```
-npm run dev
-```
+Adding Food Items to the Database (Menu)
+To add food items to the menu in the MongoDB collection:
 
-### Adding Food Items to Database Collection (Menu)
-
-To add food items to database run
+Run the following command:
 
 ```
 npm run menu
 ```
+Update the menu items:
 
-Edit `items.csv` file under `assets/csv` to change food items.
 
-## Author
-t
+- Edit the items.csv file located in the assets/csv directory to add or modify the food items.
+- Built With
 
-## Built Using
+  - Node.js – JavaScript runtime environment
+  - Express – Web application framework for Node.js
+  - MongoDB – NoSQL database
+  - Mongoose – Object Data Modeling (ODM) library for MongoDB
+  - EJS – Templating engine for rendering HTML
 
-- [NodeJS](https://nodejs.org/en) - Server
-- [Express](https://expressjs.com/) - Server Framework
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Mongoose](https://mongoosejs.com/) - Object Modeling & Schema
-- [EJS](https://ejs.co/) - Template Engine
+
+Author
+Vrushket Mulye
+https://github.com/Vrushi0912/Aaswad

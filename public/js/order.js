@@ -44,3 +44,12 @@ profileBtn.addEventListener("click", toggleProfileDropdown);
 
 // Adding Click Event on Document to Close Profile Dropdown
 document.addEventListener("click", closeProfileDropdown);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const backButton = document.querySelector('.back-button');
+
+  backButton.addEventListener('click', () => {
+    window.history.back(); // Navigates to the previous page
+  });
+});

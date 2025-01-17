@@ -1,0 +1,38 @@
+name: Update Menu and Generate menu.ejs
+
+on:
+  push:
+    paths:
+      - '**/*.csv' # Trigger when a CSV file is updated
+
+jobs:
+  update-menu:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Replace with the Node.js version your project requires
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Run the menu script
+      - name: Run Menu Script
+        run: npm run menu
+
+      # Step 5: Push updated menu.ejs (if modified)
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add menu.ejs
+          git commit -m "Update menu.ejs after CSV change" || echo "No changes to commit"
+          git push
